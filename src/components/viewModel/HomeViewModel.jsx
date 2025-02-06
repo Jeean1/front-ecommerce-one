@@ -2,7 +2,6 @@ import { useState } from "react";
 import { observer } from "mobx-react";
 import HomeView from "../view/HomeView";
 import { useStore } from "../models/rootStore";
-import { cloneDeep } from "lodash";
 
 const HomeViewModel = observer(() => {
   const [user, setUser] = useState(""); // Estado para el usuario
@@ -13,8 +12,6 @@ const HomeViewModel = observer(() => {
   async function generateLog() {
     await authStore.login(user, password);
   }
-
-  // console.log(cloneDeep(authStore.jwt.token), "::::: testing token");
 
   return (
     <HomeView

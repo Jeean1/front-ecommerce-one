@@ -1,25 +1,19 @@
 import axios from "axios";
 
-export const loginAPI = async (user, password) => {
-  const url = `https://ola2if92w9.execute-api.us-east-1.amazonaws.com/prod/auth/login`;
+export const loginAPI = async (email, password) => {
+  const url = `http://localhost:4000/auth/ecommerce/login`;
   let result;
 
   await axios
     .post(
       url,
       {
-        username: "jhon_wick_jhon",
-        password: "fw6R5q3W",
+        email,
+        password,
       },
-      {
-        withCredentials: true, // Permitir el envío y almacenamiento de cookies
-      }
+      { withCredentials: true }
     )
     .then(function (response) {
-      // console.log(response);
-      // console.log("::: cookies");
-      console.log(response); // Accede al encabezado Set-Cookie
-
       result = response;
     })
     .catch(function (error) {

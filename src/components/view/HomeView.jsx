@@ -1,4 +1,3 @@
-// import React from "react";
 import {
   Button,
   Container,
@@ -44,8 +43,11 @@ const HomeView = ({ user, password, setUser, setPassword, generateLog }) => {
               <Typography variant="h6" align="center">
                 User
               </Typography>
-              {/* <input value={user} onChange={(e) => setUser(e.target.value)} /> */}
-              <TextField size="small" />
+              <TextField
+                size="small"
+                value={user}
+                onChange={(e) => setUser(e.target.value)}
+              />
             </Grid>
             <Grid
               item
@@ -55,12 +57,12 @@ const HomeView = ({ user, password, setUser, setPassword, generateLog }) => {
               <Typography variant="h6" align="center">
                 Password
               </Typography>
-              {/* <input
+              <TextField
                 type="password"
+                size="small"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-              /> */}
-              <TextField type="password" size="small" />
+              />
             </Grid>
             <Grid container justifyContent={"center"} margin={"1rem"}>
               <Button
