@@ -1,20 +1,12 @@
-import HomeViewModel from "../components/viewModel/HomeViewModel";
-import { useStore } from "../components/models/rootStore";
-import { useCookies } from "react-cookie";
-import { useEffect } from "react";
 import CreateQuoteViewModel from "../components/viewModel/createQuoteViewModel";
+import Header from "../components/common/Header";
 
 const CreateQuote = () => {
-  //   const store = useStore();
-  //   const [cookies, ,] = useCookies("jwtToken");
-
-  //   useEffect(() => {
-  //     if (cookies.jwtToken) {
-  //       store.authStore.setToken(cookies.jwtToken, cookies.jwtToken.expires);
-  //     }
-  //   }, [cookies.jwtToken, store.authStore]);
-
-  return <CreateQuoteViewModel />;
+  return (
+    <Header privateRoute={true}>
+      <CreateQuoteViewModel />
+    </Header>
+  );
 };
 
 export default CreateQuote;

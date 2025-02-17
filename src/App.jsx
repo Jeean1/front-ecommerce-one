@@ -1,30 +1,26 @@
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { StoreProvider } from "./components/models/rootStore";
+import { AuthProvider } from "./components/providers/authProvider";
+import ProtectedRoute from "./components/common/ProtectedRoute";
 import Home from "./pages/Home";
 import CreateQuote from "./pages/CreateQuote";
-import Header from "./components/common/Header";
+import Main from "./pages/Main";
+import "./App.css";
 
 function App() {
-  // const [count, setCount] = useState(0);
-
   return (
     <StoreProvider>
       <Router>
-        <Switch>
-          <Route path="/login">
-            <Home />
-          </Route>
-          <Route path="/cotizaciones/crear">
-            <Header>
-              <CreateQuote />
-            </Header>
-          </Route>
-        </Switch>
+        <AuthProvider>
+          <Switch>
+            <Route exact path="/" component={Main} />
+            <Route path="/login" component={Home} />
+
+            {/* Ruta protegida */}
+            <ProtectedRoute path="/cotizaciones/crear" component={CreateQuote} />
+          </Switch>
+        </AuthProvider>
       </Router>
     </StoreProvider>
   );

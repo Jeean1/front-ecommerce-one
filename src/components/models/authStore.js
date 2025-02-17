@@ -1,10 +1,10 @@
+import { cloneDeep } from "lodash";
 import { loginAPI } from "../services/authStoreAPI";
 
 function createAuthStore() {
   // note the use of this which refers to observable instance of the store
   return {
-    user: { visited: false },
-    jwt: { isRegistered: false, verificationMade: false, exists: false },
+    token: { auth_active: false, id_user: null },
     error: { network: false },
     setToken(token, expires) {
       if (!expires) {
@@ -22,19 +22,13 @@ function createAuthStore() {
       if (!user || !password) return alert("Falta campos por rellenar");
 
       const result = await loginAPI(user, password);
+      // console.log("::: testing result", result.data);
 
-      const today = new Date(Date.now() + 1000 * 60 * 60 * 23);
-      if (result && !result.response && !result.notFoundError) {
-        this.jwt.token = result.data.accessToken;
-        this.jwt.expires = today;
-        this.jwt.isRegistered = true;
-        this.jwt.exists = true;
-        this.jwt.verificationMade = true;
-        this.error.network = false;
-        return result;
-      }
+      this.token.auth_active = result.data.auth;
+      this.token.id_user = result.data.id_user;
+      console.log("::: testing TOKEN", cloneDeep(this.token));
 
-      return false;
+      return result;
     },
 
     clear() {

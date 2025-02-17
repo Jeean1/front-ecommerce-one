@@ -1,8 +1,12 @@
 import { Avatar, Grid, Typography } from "@mui/material";
+import { useStore } from "../models/rootStore";
 
-const Header = ({ children }) => {
+const Header = ({ children, privateRoute = false }) => {
+  const store = useStore();
+  const authStore = store.authStore;
+
   return (
-    <Grid container direction={"column"}>
+    <Grid container direction={"column"} style={{ background: "#171d25" }}>
       <Grid item container style={{ background: "" }} padding={"1rem"}>
         {/* <Typography variant="h6">Header</Typography> */}
         <Grid item md={6} style={{ background: "" }}>
