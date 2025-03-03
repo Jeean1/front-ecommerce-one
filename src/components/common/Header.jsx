@@ -1,4 +1,4 @@
-import { Avatar, Grid, Typography } from "@mui/material";
+import { Avatar, Grid, TextField, Typography } from "@mui/material";
 import { useStore } from "../models/rootStore";
 
 const Header = ({ children, privateRoute = false }) => {
@@ -38,6 +38,22 @@ const Header = ({ children, privateRoute = false }) => {
         </Grid>
       </Grid>
       <Grid item>{children}</Grid>
+      <Grid
+        item
+        container
+        justifyContent={"center"}
+        alignItems={"center"}
+        bgcolor={"#171d25"}
+        height={"400px"}
+        // position={"absolute"}
+        // bottom={'0vh'}
+      >
+        <Grid item>
+          <Typography variant="h3" fontWeight={"bold"}>
+            Nos reservamos derechos
+          </Typography>
+        </Grid>
+      </Grid>
     </Grid>
   );
 };

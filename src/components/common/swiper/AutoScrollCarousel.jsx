@@ -10,7 +10,7 @@ const AutoScrollCarousel = () => {
       slidesPerView={"auto"}
       loop={true}
       autoplay={{
-        delay: 8000,
+        delay: 6000,
         disableOnInteraction: false,
       }}
     >

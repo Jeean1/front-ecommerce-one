@@ -1,5 +1,5 @@
 import { cloneDeep } from "lodash";
-import { loginAPI } from "../services/authStoreAPI";
+import { loginAPI, validateSession } from "../services/authStoreAPI";
 
 function createAuthStore() {
   // note the use of this which refers to observable instance of the store
@@ -24,11 +24,16 @@ function createAuthStore() {
       const result = await loginAPI(user, password);
       // console.log("::: testing result", result.data);
 
-      this.token.auth_active = result.data.auth;
-      this.token.id_user = result.data.id_user;
+      this.token.auth_active = result.data?.auth;
+      this.token.id_user = result.data?.id_user;
       console.log("::: testing TOKEN", cloneDeep(this.token));
 
       return result;
+    },
+
+    async validateSessionFunc() {
+      const result = await validateSession();
+      return true;
     },
 
     clear() {

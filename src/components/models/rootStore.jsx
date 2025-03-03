@@ -1,10 +1,12 @@
 import React from "react";
 import { useLocalStore } from "mobx-react";
 import { authStore } from "./authStore";
+import { productStore } from "./productStore";
 
 export function createRootStore() {
   return {
     authStore,
+    productStore,
   };
 }
 

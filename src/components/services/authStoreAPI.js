@@ -1,4 +1,5 @@
 import axios from "axios";
+import { cloneDeep } from "lodash";
 
 export const loginAPI = async (email, password) => {
   const url = `http://localhost:4000/auth/ecommerce/login`;
@@ -27,9 +28,21 @@ export const loginAPI = async (email, password) => {
 
 export const validateSession = async () => {
   try {
-    await axios.get("http://localhost:4000/private/auth/validate", {
-      withCredentials: true, // Necesario para enviar cookies HttpOnly
-    });
+    const result = await axios.get(
+      "http://localhost:4000/private/auth/validate",
+      {
+        withCredentials: true, // Necesario para enviar cookies HttpOnly
+      }
+    );
+
+    console.log(";;;; testing api", cloneDeep(result));
+
+
+    //** 
+    // Modificar para qué reciba data en vez de un true quemado
+    // validar y ajustar las otras  rutas que usan esta función
+    //  */
+
     return true;
   } catch (error) {
     console.error(error);
