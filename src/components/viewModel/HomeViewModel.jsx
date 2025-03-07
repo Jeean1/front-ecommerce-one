@@ -1,19 +1,19 @@
 import { useState } from "react";
-import { observer } from "mobx-react";
+import { observer } from "mobx-react-lite";
 import HomeView from "../view/HomeView";
 import { useStore } from "../models/rootStore";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useNavigate } from "react-router-dom";
 
 const HomeViewModel = observer(() => {
   const [user, setUser] = useState(""); // Estado para el usuario
   const [password, setPassword] = useState(""); // Estado para la contraseña
   const store = useStore();
   const authStore = store.authStore;
-  const navigate = useHistory();
+  const navigate = useNavigate();
 
   async function generateLog() {
     await authStore.login(user, password);
-    navigate.push("/");
+    navigate("/");
   }
 
   return (

@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { validateSession } from "../services/authStoreAPI";
 
@@ -8,7 +8,7 @@ const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
-  const navigate = useHistory();
+  const navigate = useNavigate();
 
   // Función para validar la sesión con el backend
   // const validateSession = async () => {
@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
       { withCredentials: true }
     );
     setIsAuthenticated(false);
-    navigate.push("/login");
+    navigate("/login");
   };
 
   return (

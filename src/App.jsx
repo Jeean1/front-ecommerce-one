@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { StoreProvider } from "./components/models/rootStore";
 import { AuthProvider } from "./components/providers/authProvider";
 import ProtectedRoute from "./components/common/ProtectedRoute";
@@ -14,18 +14,16 @@ function App() {
     <StoreProvider>
       <Router>
         <AuthProvider>
-          <Switch>
-            <Route exact path="/" component={Main} />
-            <Route exact path="/game/detail/:id" component={GameDetail} />
-
-            <Route path="/login" component={Home} />
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/game/detail/:id" element={<GameDetail />} />
+            <Route path="/login" element={<Home />} />
 
             {/* Ruta protegida */}
-            <ProtectedRoute
-              path="/cotizaciones/crear"
-              component={CreateQuote}
-            />
-          </Switch>
+            <Route element={<ProtectedRoute />}>
+              <Route path="/cotizaciones/crear" element={<CreateQuote />} />
+            </Route>
+          </Routes>
         </AuthProvider>
       </Router>
     </StoreProvider>

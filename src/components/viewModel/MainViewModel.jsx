@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { observer } from "mobx-react";
+import { observer } from "mobx-react-lite";
 import { useStore } from "../models/rootStore";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import MainView from "../view/MainView";
 
@@ -63,7 +63,7 @@ const MainViewModel = observer(() => {
   const store = useStore();
   const authStore = store.authStore;
   const productStore = store.productStore;
-  const navigate = useHistory();
+  const navigate = useNavigate();
 
   async function generateLog() {
     await authStore.login(user, password);
@@ -72,7 +72,7 @@ const MainViewModel = observer(() => {
   const setProductStoreFunc = (item) => {
     return () => {
       productStore.setSelectedProduct(item);
-      navigate.push(`/game/detail/${item.id}`);
+      navigate(`/game/detail/${item.id}`);
     };
   };
 

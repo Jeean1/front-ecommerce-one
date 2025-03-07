@@ -1,9 +1,9 @@
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import { ParticlesCode } from "../common/particles/particles";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const GameDetailView = ({ selectedProduct, goBackRoute, addProductToCart }) => {
-  const history = useHistory();
+  const history = useNavigate();
   return (
     <Container
       maxWidth
@@ -119,7 +119,7 @@ const GameDetailView = ({ selectedProduct, goBackRoute, addProductToCart }) => {
                   borderRadius: "10px",
                   "&:hover": { backgroundColor: "#474747", color: "white" },
                 }}
-                onClick={() => history.goBack()}
+                onClick={() => history(-1)}
               >
                 Regresar
               </Button>
