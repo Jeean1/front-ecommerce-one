@@ -1,5 +1,5 @@
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
-import { ParticlesCode } from "../common/particles/particles";
+import { ParticlesCode } from "../common/particles/Particles";
 import { useNavigate } from "react-router-dom";
 
 const GameDetailView = ({ selectedProduct, goBackRoute, addProductToCart }) => {
@@ -12,7 +12,7 @@ const GameDetailView = ({ selectedProduct, goBackRoute, addProductToCart }) => {
         padding: "4rem 2rem",
       }}
     >
-      {/* <ParticlesCode /> */}
+      <ParticlesCode />
       <Grid container direction={"column"} justifyContent="center" gap={"1rem"}>
         <Grid item>
           <Button
