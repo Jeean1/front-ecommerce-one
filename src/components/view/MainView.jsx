@@ -1,7 +1,7 @@
 import { Button, Container, Grid, Typography } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AutoScrollCarousel from "../common/swiper/AutoScrollCarousel";
-import { ParticlesCode } from "../common/particles/particles";
+import { ParticlesCode } from "../common/particles/Particles";
 import { useState } from "react";
 import { cloneDeep } from "lodash";
 
