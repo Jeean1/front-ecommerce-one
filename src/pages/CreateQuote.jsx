@@ -1,4 +1,4 @@
-import CreateQuoteViewModel from "../components/viewModel/createQuoteViewModel";
+import CreateQuoteViewModel from "../components/viewModel/CreateQuoteViewModel";
 import Header from "../components/common/Header";
 
 const CreateQuote = () => {
