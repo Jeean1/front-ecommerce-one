@@ -19,9 +19,20 @@ const MainView = ({ setProductStoreFunc, dataProducts }) => {
   const dataDumb = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   const dataDumbTwo = [
-    { title: "Pinturas", image: "/images/paint.jpg" },
-    { title: "Brochas y Rodillos", image: "/images/brushes.jpg" },
-    { title: "Cintas y Protectores", image: "/images/tape.jpg" },
+    {
+      title: "Pinturas",
+      image:
+        "https://pinturasdoal.com/wp-content/uploads/Featured-Estrategias-para-vender-mas-pintura-en-tu-tienda.jpg",
+    },
+    {
+      title: "Brochas y Rodillos",
+      image: "https://cdn2.hubspot.net/hubfs/6015546/brushes.jpg",
+    },
+    {
+      title: "Cintas y Protectores",
+      image:
+        "https://http2.mlstatic.com/D_NQ_NP_940989-MCO74147833928_012024-O.webp",
+    },
   ];
 
   return (
@@ -40,18 +51,22 @@ const MainView = ({ setProductStoreFunc, dataProducts }) => {
         {/* top products */}
         <Grid item container justifyContent={"center"} md={12} gap={"5rem"}>
           <Grid item>
-            <Typography variant={"h3"} textAlign={"center"} color={"gray"}>
+            <Typography
+              variant="h2"
+              fontWeight="bold"
+              color={"white"}
+              sx={{
+                textShadow: "1px 1px 5px rgba(255, 255, 255, 0.6)",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                p: 1.5,
+                borderRadius: "10px",
+              }}
+            >
               Nuestros productos
             </Typography>
           </Grid>
 
-          <Grid
-            item
-            container
-            justifyContent={"center"}
-            md={12}
-            bgcolor={""}
-          >
+          <Grid item container justifyContent={"center"} md={12} bgcolor={""}>
             {dataDumbTwo.map((category, b) => (
               <Grid item md={3} key={b}>
                 <Card sx={{ maxWidth: 350, borderRadius: "0.5rem" }}>
@@ -88,9 +103,19 @@ const MainView = ({ setProductStoreFunc, dataProducts }) => {
         </Grid>
         {/* general products */}
         <Grid item container direction={""} md={10} gap="3rem" margin={""}>
-          <Grid item>
-            <Typography variant="h4" color={"gray"} fontWeight={"bold"}>
-              Herramientas esenciales para un acabado impecable 🖌️✔️{" "}
+          <Grid item container justifyContent={"center"}>
+            <Typography
+              variant="h3"
+              fontWeight="bold"
+              color={"white"}
+              sx={{
+                textShadow: "1px 1px 5px rgba(255, 255, 255, 0.6)",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                p: 1.5,
+                borderRadius: "10px",
+              }}
+            >
+              Nuestros productos
             </Typography>
           </Grid>
           {/* container */}
@@ -100,14 +125,16 @@ const MainView = ({ setProductStoreFunc, dataProducts }) => {
               container
               md={12}
               justifyContent={"space-around"}
-              gap={"2rem"}
+              gap={"0rem"}
               style={{ background: "" }}
             >
-              {dataDumb.map((a, b) => (
+              {/* {dataDumb.map((a, b) => (
                 <Grid item key={`${b}A`}>
                   <CardOne />
                 </Grid>
-              ))}
+              ))} */}
+
+              <CardOne />
             </Grid>
           </Grid>
         </Grid>

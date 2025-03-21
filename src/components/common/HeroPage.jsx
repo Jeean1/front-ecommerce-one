@@ -9,7 +9,9 @@ export default function HeroSection() {
         alignItems: "center",
         justifyContent: "center",
         height: "90vh",
-        backgroundImage: "url('/public/pic-one-hero.webp')", // Usa la imagen generada
+        // background: '#00754b',
+        backgroundImage:
+          "url('https://www.comercialquintairos.es/blog/cual-es-la-mejor-pintura-para-el-exterior-de-una-vivienda_pic2021ni0t6.jpg')", // Usa la imagen generada
         backgroundSize: "cover",
         backgroundPosition: "center",
         textAlign: "center",
@@ -22,9 +24,10 @@ export default function HeroSection() {
       <Typography
         variant="h2"
         fontWeight="bold"
+        color={"white"}
         sx={{
-          textShadow: "1px 1px 5px rgba(255,255,255,0.6)",
-          backgroundColor: "rgba(255, 255, 255, 0.5)",
+          textShadow: "1px 1px 5px rgba(255, 255, 255, 0.6)",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
           p: 1.5,
           borderRadius: "10px",
         }}
@@ -35,17 +38,18 @@ export default function HeroSection() {
       <Typography
         variant="h5"
         mt={2}
+        color={"white"}
         sx={{
-          textShadow: "1px 1px 3px rgba(255,255,255,0.5)",
-          backgroundColor: "rgba(255, 255, 255, 0.4)",
-          p: 1,
-          borderRadius: "8px",
+          textShadow: "1px 1px 5px rgba(255, 255, 255, 0.6)",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          p: 1.5,
+          borderRadius: "10px",
         }}
       >
         Pinturas de calidad para un ambiente armonioso y moderno
       </Typography>
 
-      <Box mt={3} display="flex" gap={2}>
+      {/* <Box mt={3} display="flex" gap={2}>
         <Button
           variant="contained"
           sx={{
@@ -73,7 +77,7 @@ export default function HeroSection() {
         >
           Comprar Pinturas
         </Button>
-      </Box>
+      </Box> */}
     </Box>
   );
 }
