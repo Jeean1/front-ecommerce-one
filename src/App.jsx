@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { StoreProvider } from "./components/models/rootStore";
-import { AuthProvider } from "./components/providers/authProvider";
-import ProtectedRoute from "./components/common/ProtectedRoute";
-import CreateQuote from "./pages/CreateQuote";
-import Main from "./pages/Main";
-import GameDetail from "./pages/GameDetail";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { StoreProvider } from './components/models/rootStore';
+import { AuthProvider } from './components/providers/authProvider';
+import ProtectedRoute from './components/common/ProtectedRoute';
+import CreateQuote from './pages/CreateQuote';
+import Main from './pages/Main';
+import GameDetail from './pages/GameDetail';
+import './App.css';
 
 function App() {
   return (

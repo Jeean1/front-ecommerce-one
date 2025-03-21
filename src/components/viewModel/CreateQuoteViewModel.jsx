@@ -1,6 +1,6 @@
-import { observer } from "mobx-react-lite";
+import { observer } from 'mobx-react-lite';
 // import { useStore } from "../models/rootStore";
-import CreateQuoteView from "../view/CreateQuoteView";
+import CreateQuoteView from '../view/CreateQuoteView';
 
 const CreateQuoteViewModel = observer(() => {
   // const store = useStore();

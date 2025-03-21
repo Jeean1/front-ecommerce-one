@@ -1,5 +1,5 @@
-import { cloneDeep } from "lodash";
-import { loginAPI, validateSession } from "../services/authStoreAPI";
+import { cloneDeep } from 'lodash';
+import { loginAPI, validateSession } from '../services/authStoreAPI';
 
 function createAuthStore() {
   // note the use of this which refers to observable instance of the store
@@ -19,14 +19,14 @@ function createAuthStore() {
       this.jwt.verificationMade = true;
     },
     async login(user, password) {
-      if (!user || !password) return alert("Falta campos por rellenar");
+      if (!user || !password) return alert('Falta campos por rellenar');
 
       const result = await loginAPI(user, password);
       // console.log("::: testing result", result.data);
 
       this.token.auth_active = result.data?.auth;
       this.token.id_user = result.data?.id_user;
-      console.log("::: testing TOKEN", cloneDeep(this.token));
+      console.log('::: testing TOKEN', cloneDeep(this.token));
 
       return result;
     },
@@ -38,7 +38,7 @@ function createAuthStore() {
 
     clear() {
       this.jwt = {};
-    },
+    }
   };
 }
 

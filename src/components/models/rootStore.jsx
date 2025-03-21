@@ -1,12 +1,12 @@
-import React, { createContext, useContext } from "react";
-import { useLocalObservable } from "mobx-react-lite";
-import { authStore } from "./authStore";
-import { productStore } from "./productStore";
+import React, { createContext, useContext } from 'react';
+import { useLocalObservable } from 'mobx-react-lite';
+import { authStore } from './authStore';
+import { productStore } from './productStore';
 
 export function createRootStore() {
   return {
     authStore: authStore,
-    productStore: productStore,
+    productStore: productStore
   };
 }
 
@@ -15,15 +15,13 @@ const StoreContext = createContext(null);
 export const StoreProvider = ({ children }) => {
   const rootStore = useLocalObservable(createRootStore);
 
-  return (
-    <StoreContext.Provider value={rootStore}>{children}</StoreContext.Provider>
-  );
+  return <StoreContext.Provider value={rootStore}>{children}</StoreContext.Provider>;
 };
 
 export const useStore = () => {
   const store = useContext(StoreContext);
   if (!store) {
-    throw new Error("useStore debe usarse dentro de un StoreProvider.");
+    throw new Error('useStore debe usarse dentro de un StoreProvider.');
   }
   return store;
 };

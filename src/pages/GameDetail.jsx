@@ -1,4 +1,4 @@
-import GameDetailViewModel from "../components/viewModel/GameDetailViewModel";
+import GameDetailViewModel from '../components/viewModel/GameDetailViewModel';
 
 const GameDetail = () => {
   return <GameDetailViewModel />;

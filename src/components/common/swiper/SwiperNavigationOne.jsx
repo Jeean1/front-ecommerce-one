@@ -1,27 +1,22 @@
 // import React, { useRef, useState } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "../swiper/swiperCss.css";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import '../swiper/swiperCss.css';
 
 // import required modules
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay } from 'swiper/modules';
 
 export default function SwiperNavigationOne() {
   return (
-    <Swiper
-      navigation={true}
-      modules={[Navigation, Autoplay]}
-      autoplay
-      className="mySwiper"
-    >
+    <Swiper navigation={true} modules={[Navigation, Autoplay]} autoplay className="mySwiper">
       <SwiperSlide>
         <img
           src="https://www.pintuco.com.co/wp-content/uploads/2024/06/banner-bonito-pintuco-2.webp"
-          style={{ width: "100%" }}
+          style={{ width: '100%' }}
         />
       </SwiperSlide>
       <SwiperSlide>

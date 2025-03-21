@@ -1,11 +1,11 @@
-import LoggedViewModel from "../components/viewModel/LoggedViewModel";
-import { useStore } from "../components/models/rootStore";
-import { useCookies } from "react-cookie";
-import { useEffect } from "react";
+import LoggedViewModel from '../components/viewModel/LoggedViewModel';
+import { useStore } from '../components/models/rootStore';
+import { useCookies } from 'react-cookie';
+import { useEffect } from 'react';
 
 const Logged = () => {
   const store = useStore();
-  const [cookies, ,] = useCookies("jwtToken");
+  const [cookies, ,] = useCookies('jwtToken');
 
   useEffect(() => {
     if (cookies.jwtToken) {

@@ -1,5 +1,5 @@
-import CreateQuoteViewModel from "../components/viewModel/CreateQuoteViewModel";
-import Header from "../components/common/Header";
+import CreateQuoteViewModel from '../components/viewModel/CreateQuoteViewModel';
+import Header from '../components/common/Header';
 
 const CreateQuote = () => {
   return (

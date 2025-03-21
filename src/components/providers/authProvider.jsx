@@ -1,7 +1,7 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { validateSession } from "../services/authStoreAPI";
+import { createContext, useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { validateSession } from '../services/authStoreAPI';
 
 // Crear contexto de autenticación
 const AuthContext = createContext(null);
@@ -37,20 +37,12 @@ export const AuthProvider = ({ children }) => {
 
   // Función para cerrar sesión
   const logout = async () => {
-    await axios.post(
-      "http://localhost:4000/auth/logout",
-      {},
-      { withCredentials: true }
-    );
+    await axios.post('http://localhost:4000/auth/logout', {}, { withCredentials: true });
     setIsAuthenticated(false);
-    navigate("/login");
+    navigate('/login');
   };
 
-  return (
-    <AuthContext.Provider value={{ isAuthenticated, validateSession, logout }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={{ isAuthenticated, validateSession, logout }}>{children}</AuthContext.Provider>;
 };
 
 // Hook para usar la autenticación en otros componentes

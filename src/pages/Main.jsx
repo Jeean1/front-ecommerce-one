@@ -1,5 +1,5 @@
-import Header from "../components/common/Header";
-import MainViewModel from "../components/viewModel/MainViewModel";
+import Header from '../components/common/Header';
+import MainViewModel from '../components/viewModel/MainViewModel';
 
 const Main = () => {
   return (

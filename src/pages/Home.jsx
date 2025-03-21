@@ -1,11 +1,11 @@
-import HomeViewModel from "../components/viewModel/HomeViewModel";
-import { useStore } from "../components/models/rootStore";
-import { useCookies } from "react-cookie";
-import { useEffect } from "react";
+import HomeViewModel from '../components/viewModel/HomeViewModel';
+import { useStore } from '../components/models/rootStore';
+import { useCookies } from 'react-cookie';
+import { useEffect } from 'react';
 
 const Home = () => {
   const store = useStore();
-  const [cookies, ,] = useCookies("jwtToken");
+  const [cookies, ,] = useCookies('jwtToken');
 
   useEffect(() => {
     if (cookies.jwtToken) {

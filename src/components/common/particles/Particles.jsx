@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { useEffect, useState } from 'react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
 // import { loadAll } from "@/tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
 // import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
+import { loadSlim } from '@tsparticles/slim'; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
 export const ParticlesCode = () => {
@@ -10,7 +10,7 @@ export const ParticlesCode = () => {
 
   // this should be run only once per application lifetime
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
+    initParticlesEngine(async engine => {
       // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
       // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
       // starting from v2 you can add only the features you need reducing the bundle size
@@ -23,7 +23,7 @@ export const ParticlesCode = () => {
     });
   }, []);
 
-  const particlesLoaded = (container) => {
+  const particlesLoaded = container => {
     // console.log(container);
   };
 
@@ -31,76 +31,76 @@ export const ParticlesCode = () => {
     init && (
       <Particles
         id="tsparticles"
-        style={{ position: "relative", zIndex: 1 }}
+        style={{ position: 'relative', zIndex: 1 }}
         particlesLoaded={particlesLoaded}
         options={{
           background: {
             color: {
-              value: "transparent",
-            },
+              value: 'transparent'
+            }
           },
           fpsLimit: 120,
           interactivity: {
             events: {
               onClick: {
                 enable: true,
-                mode: "push",
+                mode: 'push'
               },
               onHover: {
                 enable: true,
-                mode: "repulse",
+                mode: 'repulse'
               },
-              resize: true,
+              resize: true
             },
             modes: {
               push: {
-                quantity: 1,
+                quantity: 1
               },
               repulse: {
                 distance: 200,
-                duration: 0.4,
-              },
-            },
+                duration: 0.4
+              }
+            }
           },
           particles: {
             color: {
-              value: "#ffffff",
+              value: '#ffffff'
             },
             links: {
-              color: "#ffffff",
+              color: '#ffffff',
               distance: 150,
               enable: false,
               opacity: 0,
-              width: 10,
+              width: 10
             },
             move: {
-              direction: "none",
+              direction: 'none',
               enable: true,
               outModes: {
-                default: "bounce",
+                default: 'bounce'
               },
               random: false,
               speed: 0.8,
-              straight: false,
+              straight: false
             },
             number: {
               density: {
                 enable: true,
-                area: 800,
+                area: 800
               },
-              value: 80,
+              value: 80
             },
             opacity: {
-              value: 0.5,
+              value: 0.5
             },
             shape: {
-              type: "circle",
+              type: 'circle'
             },
             size: {
-              value: { min: 1, max: 5 },
-            },
+              value: { min: 1, max: 5 }
+            }
           },
-          detectRetina: true,
+          detectRetina: true
         }}
       />
     )
