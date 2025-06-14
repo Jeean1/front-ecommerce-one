@@ -16,7 +16,7 @@ const AutoScrollCarousel = () => {
     >
       <SwiperSlide onClick={() => alert('active')}>
         <img
-          src="https://lol-stats.net/uploads/4oFJWfOt73gESxXmHb0aAyij5wSDnQU5shtOjf8p.jpeg"
+          src={BannerImgOne}
           alt="Slide 1"
           style={{
             width: '100%', // La imagen se ajusta al ancho del contenedor

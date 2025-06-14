@@ -1,9 +1,11 @@
 import {
   Avatar,
+  Box,
   Card,
   CardActionArea,
   CardContent,
   CardMedia,
+  Container,
   Drawer,
   Grid,
   IconButton,
@@ -15,14 +17,16 @@ import {
 import { useStore } from '../models/rootStore';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useState } from 'react';
+import { generalColorCompany } from '../../colorEmpresa';
+import logoCompany from '../../../public/logo_compañia_ferroconstructores.jpg';
 
 const Header = ({ children }) => {
   const store = useStore();
   const [open, setOpen] = useState(false);
 
   return (
-    <>
-      <Grid container direction={'column'} style={{ background: '#474747', position: 'fixed', zIndex: 9 }}>
+    <Grid container direction={'column'} overflow={'hidden'}>
+      <Grid item sm={12} container direction={'column'} style={{ background: '#474747', position: 'fixed', zIndex: 9 }}>
         <Grid item container style={{ background: '' }} padding={'1rem'}>
           <Grid item md={6} style={{ background: '' }}>
             <Grid item md={12} style={{ background: '' }}>
@@ -49,6 +53,8 @@ const Header = ({ children }) => {
           </Grid>
         </Grid>
       </Grid>
+
+      {/* list products */}
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
         <List sx={{ width: 250 }}>
           <ListItem>
@@ -132,10 +138,37 @@ const Header = ({ children }) => {
           </ListItem>
         </List>
       </Drawer>
-      <Grid item marginTop={'10rem'}>
+
+      {/* children */}
+      <Grid item sm={12} marginTop={'10rem'}>
         {children}
       </Grid>
-    </>
+
+      {/* footer */}
+      <Grid item sm={10}>
+        <Grid
+          container
+          direction={'column'}
+          justifyContent={'space-evenly'}
+          alignItems={'center'}
+          padding={'3rem'}
+          height={'500px'}
+          width={'100%'}
+          bgcolor={generalColorCompany['uno']}
+        >
+          <Grid item></Grid>
+          <Grid maxHeight={'300PX'} item>
+            <img src={logoCompany} width={'100%'} height={'100%'} alt="compañia logo" style={{ borderRadius: '50%' }} />
+          </Grid>
+
+          <Grid item>
+            <Typography variant="h3" align="center" color={'white'} fontWeight={'bolder'}>
+              PINTURAS DEL PACIFICO
+            </Typography>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 

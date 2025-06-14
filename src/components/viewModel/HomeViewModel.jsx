@@ -17,6 +17,7 @@ const HomeViewModel = observer(() => {
   }
 
   return (
+    //login
     <HomeView user={user} setUser={setUser} password={password} setPassword={setPassword} generateLog={generateLog} />
   );
 });
