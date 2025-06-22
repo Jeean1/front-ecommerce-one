@@ -7,31 +7,30 @@ const MainView = () => {
   // FERROCONSTRUCTORES
 
   return (
-    <Grid container justifyContent={'center'} alignItems={'center'}>
-      <Grid md={12} container justifyContent={'center'}>
-        <Grid item sm={12} md={4}>
+    <Grid container>
+      <Grid md={12} container gap={'4rem'}>
+        <Grid item sm={12} md={3}>
           <Card
             elevation={5}
             sx={{
               bgcolor: generalColorCompany['uno'],
               borderRadius: '16px',
               p: 2,
-              minHeight: '90%'
+              // minHeight: '90%',
+              height: '100%'
             }}
           >
             {/* Contenido */}
             <Grid
               container
               direction={'column'}
-              justifyContent={'space-evenly'}
+              // justifyContent={'space-evenly'}
               alignItems={'center'}
-              padding={'3rem'}
-              height={'500px'}
-              width={'100%'}
+              minHeight={'500px'}
               bgcolor={generalColorCompany['uno']}
+              spacing={6}
             >
-              <Grid item></Grid>
-              <Grid maxHeight={'300PX'} item>
+              <Grid item maxHeight={'300PX'}>
                 <img
                   src={logoCompany}
                   width={'100%'}
@@ -46,30 +45,33 @@ const MainView = () => {
                   PINTURAS DEL PACIFICO
                 </Typography>
               </Grid>
+
+              {/* Texto informativo */}
+              <Grid item container direction={'column'} gap={'1rem'}>
+                <Typography variant="h4" fontWeight={'bold'} color={'#FFF'} textAlign={'justify'}>
+                  Quienes somos:
+                </Typography>
+                <Typography variant="body1" fontWeight={''} color={'#FFF'} textAlign={'justify'}>
+                  Pinturas del Pacífico es una empresa dedicada a la distribución de pinturas y productos
+                  complementarios. Atendemos tanto a clientes minoristas como mayoristas desde hace 5 años. Envíos
+                  nacionales.
+                </Typography>
+              </Grid>
             </Grid>
           </Card>
         </Grid>
 
         {/* general products */}
-        <Grid item container direction={''} sm={12} md={8} gap="2rem" padding={'1rem'}>
+        <Grid item container sm={12} md={8} spacing={5} marginBottom={'3rem'}>
           <Grid item container justifyContent={'center'}>
-            <Typography
-              variant="h3"
-              fontWeight="bold"
-              color={'white'}
-              sx={{
-                textShadow: '1px 1px 5px rgba(255, 255, 255, 0.6)',
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                p: 1.5,
-                borderRadius: '10px'
-              }}
-            >
+            <Typography variant="h3" fontWeight="bold" color={'#000'} padding={'0'}>
               CATALOGO DE PRODUCTOS
             </Typography>
           </Grid>
+
           {/* container */}
           <Grid item container md={12}>
-            <Grid item container md={12} justifyContent={'space-around'} gap={'0rem'} style={{ background: '' }}>
+            <Grid item container md={12} justifyContent={'space-around'}>
               <CardOne />
             </Grid>
           </Grid>

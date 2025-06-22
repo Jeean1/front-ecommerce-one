@@ -5,20 +5,18 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
-  Container,
   Drawer,
   Grid,
   IconButton,
   List,
   ListItem,
-  ListItemText,
   Typography
 } from '@mui/material';
 import { useStore } from '../models/rootStore';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useState } from 'react';
 import { generalColorCompany } from '../../colorEmpresa';
-import logoCompany from '../../../public/logo_compañia_ferroconstructores.jpg';
+import { Facebook, Instagram, WhatsApp } from '@mui/icons-material';
 
 const Header = ({ children }) => {
   const store = useStore();
@@ -145,29 +143,71 @@ const Header = ({ children }) => {
       </Grid>
 
       {/* footer */}
-      <Grid item sm={10}>
+      <Grid item md={12}>
         <Grid
+          md={12}
           container
-          direction={'column'}
           justifyContent={'space-evenly'}
-          alignItems={'center'}
+          // direction={'column'}
+          // justifyContent={'space-evenly'}
+          // alignItems={'center'}
           padding={'3rem'}
-          height={'500px'}
-          width={'100%'}
+          minHeight={'500px'}
+          // width={'100%'}
           bgcolor={generalColorCompany['uno']}
         >
-          <Grid item></Grid>
-          <Grid maxHeight={'300PX'} item>
-            <img src={logoCompany} width={'100%'} height={'100%'} alt="compañia logo" style={{ borderRadius: '50%' }} />
-          </Grid>
-
-          <Grid item>
-            <Typography variant="h3" align="center" color={'white'} fontWeight={'bolder'}>
-              PINTURAS DEL PACIFICO
+          <Grid item md={5}>
+            <Typography variant="h3" color={'#FFF'}>
+              ¿Dónde estamos?
             </Typography>
+            <Typography variant="h6" color={'#FFF'}>
+              Nos encontramos en Cali. Realizamos entregas en toda la ciudad & nacional.
+            </Typography>
+            <Box mt={2}>
+              <iframe
+                src="https://maps.google.com/maps?q=Cali%20Colombia&z=11&output=embed"
+                width="100%"
+                height="150"
+                style={{ border: 0, borderRadius: 8, height: '500px' }}
+                allowFullScreen=""
+                loading="lazy"
+                title="cali-colombia-ubicacion"
+              ></iframe>
+            </Box>
+          </Grid>
+          <Grid item md={5}>
+            <Box mt={1} display={'flex'} flexDirection={'column'} gap={'1rem'}>
+              <Typography variant="h3" color={'#FFF'}>
+                Nuestras redes sociales
+              </Typography>
+
+              <Grid container direction={'column'} alignItems={'flex-start'}>
+                <IconButton href="https://www.instagram.com/ferroconstructoresdelpacifico_/" target="_blank">
+                  <Instagram style={{ color: 'white', height: '100%', margin: '0 1rem' }} />
+                  <Typography color={'#FFF'}>INSTAGRAM</Typography>
+                </IconButton>
+                <IconButton href="https://www.facebook.com/ferroconstructoresdelpacifico" target="_blank">
+                  <Facebook style={{ color: 'white', height: '100%', margin: '0 1rem' }} />{' '}
+                  <Typography color={'#FFF'}>FACEBOOK</Typography>
+                </IconButton>
+                <IconButton
+                  href="https://api.whatsapp.com/send/?phone=573106399057&text=%22Hola%20me%20interesa%20comprar%22&type=phone_number&app_absent=0"
+                  target="_blank"
+                >
+                  <WhatsApp style={{ color: 'white', height: '100%', margin: '0 1rem' }} />{' '}
+                  <Typography color={'#FFF'}>WHATSAPP</Typography>
+                </IconButton>
+              </Grid>
+            </Box>
           </Grid>
         </Grid>
       </Grid>
+
+      <Typography variant="h6" margin={1}>
+        <a href="https://www.linkedin.com/in/jeanpol-giraldo/" target="_blank">
+          Software creado por Roux Company
+        </a>
+      </Typography>
     </Grid>
   );
 };
