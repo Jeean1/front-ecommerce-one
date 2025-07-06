@@ -64,7 +64,7 @@ const MainView = () => {
         {/* general products */}
         <Grid item container sm={12} md={8} spacing={5} marginBottom={'3rem'}>
           <Grid item container justifyContent={'center'}>
-            <Typography variant="h3" fontWeight="bold" color={'#000'} padding={'0'}>
+            <Typography variant="h3" fontWeight="bold" color={''} padding={'0'} textAlign={'center'}>
               CATALOGO DE PRODUCTOS
             </Typography>
           </Grid>
