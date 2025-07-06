@@ -32,7 +32,7 @@ const Header = ({ children }) => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+      if (currentScrollY > lastScrollY.current && currentScrollY > 300) {
         setShowHeader(false); // scroll hacia abajo
       } else {
         setShowHeader(true); // scroll hacia arriba
@@ -169,7 +169,7 @@ const Header = ({ children }) => {
       </Drawer>
 
       {/* Contenido principal */}
-      <Grid item xs={12} marginTop="250px" padding={isMobile ? '1rem' : '0'}>
+      <Grid item xs={12} marginTop="250px" padding={isMobile ? '1rem' : '0'} container justifyContent="center">
         {children}
       </Grid>
 

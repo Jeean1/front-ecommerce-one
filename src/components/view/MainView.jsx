@@ -70,8 +70,8 @@ const MainView = () => {
           </Grid>
 
           {/* container */}
-          <Grid item container md={12}>
-            <Grid item container md={12} justifyContent={'space-around'}>
+          <Grid item container justifyContent={'center'} md={12}>
+            <Grid item container md={12} justifyContent={'center'}>
               <CardOne />
             </Grid>
           </Grid>
